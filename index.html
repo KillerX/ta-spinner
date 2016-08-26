@@ -1,0 +1,44 @@
+<html>
+	<head>
+<style>
+img.spinner {
+    transition: transform 2s ease-out;
+	width: 100%;
+	max-height: 100%;
+}
+
+.arrow-down {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 50px solid #FFFFFF;
+	position: absolute;
+	left: 49%;
+	z-index: 90;
+}
+
+</style>
+	</head>
+	<body>
+
+		<div class="arrow-down"></div>
+		<img src="spinner.png" alt="spinner" class="spinner" />
+		<img src="legend.png" alt="legend" />
+		<script language="javascript">
+			var img = document.querySelector('img');
+			img.addEventListener('click', onClick, false);
+
+
+			function onClick() {
+			this.removeAttribute('style');
+
+			var deg = 360 + Math.round(Math.random() * 2000);
+
+			var css = 'transform: rotate(' + deg + 'deg);';
+
+			this.setAttribute('style', css);
+					};
+		</script>
+	</body>
+</html>
